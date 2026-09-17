@@ -30,9 +30,3 @@ python3 -m http.server 8080
 ## الأصول
 
 تم توليد الخلفية والكرة الضوئية بهوية بصرية علمية أصلية. تعتمد الواجهة نفسها على CSS وCanvas حتى تبقى سريعة ومتجاوبة على الهاتف والكمبيوتر.
-
-## فتح اللعبة من GitHub
-
-رابط المستودع يعرض الملفات فقط. لتفعيل الرابط الحي من GitHub، افتح Settings ثم Pages، واختر Deploy from a branch، ثم اختر branch `master` والمجلد `/docs` واضغط Save. بعد دقيقة تقريباً سيكون الرابط:
-
-`https://mhmadamani57-boop.github.io/particle-lab-ar/`
