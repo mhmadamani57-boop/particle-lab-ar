@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="مختبر الجسيمات — لعبة علمية تفاعلية عن المجالات المغناطيسية." />
+  <title>مختبر الجسيمات | Particle Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="مختبر الجسيمات">
+        <span class="brand-mark">◉</span>
+        <span><b>مختبر الجسيمات</b><small>PARTICLE LAB / 01</small></span>
+      </a>
+      <div class="top-meta"><span class="live-dot"></span> تجربة محاكاة حية</div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">تجربة علمية رقمية · المستوى 01</p>
+          <h1>أطلق الجسيم.<br><em>اكتشف المدار.</em></h1>
+          <p class="lede">هل تستطيع توجيه جسيم مشحون داخل الحقل المغناطيسي وإيصاله إلى بوابة الطاقة؟ غيّر المتغيرات، راقب النتيجة، وتعلّم الفيزياء باللعب.</p>
+          <div class="hero-actions">
+            <button class="primary-btn" id="startBtn">ابدأ التجربة <span>←</span></button>
+            <button class="text-btn" id="howBtn">كيف تعمل؟ <span>↗</span></button>
+          </div>
+        </div>
+        <div class="hero-stat"><span class="stat-number">03</span><span>متغيرات<br>تتحكم بها</span></div>
+      </section>
+
+      <section class="lab-grid" id="lab">
+        <div class="panel experiment-panel">
+          <div class="panel-heading"><div><span class="kicker">المحاكاة / 01</span><h2>غرفة الانحراف</h2></div><span class="status-pill" id="runStatus">جاهز</span></div>
+          <div class="canvas-wrap">
+            <canvas id="labCanvas" aria-label="محاكاة مسار الجسيم"></canvas>
+            <div class="canvas-label label-a">مصدر الجسيم</div><div class="canvas-label label-b">بوابة الطاقة</div>
+            <div class="target-ring" id="targetRing"><span>الهدف</span></div>
+          </div>
+          <div class="telemetry"><div><small>الموضع X</small><strong id="xReadout">—</strong></div><div><small>الطاقة</small><strong id="energyReadout">—</strong></div><div><small>الزمن</small><strong id="timeReadout">0.00 s</strong></div><div class="telemetry-state"><small>الحالة</small><strong id="stateReadout">في الانتظار</strong></div></div>
+        </div>
+
+        <aside class="panel controls-panel">
+          <div class="panel-heading"><div><span class="kicker">لوحة التحكم / 02</span><h2>اضبط التجربة</h2></div><span class="control-icon">⌁</span></div>
+          <div class="control-group"><label for="fieldRange"><span>شدة المجال B</span><output id="fieldValue">0.60 T</output></label><input id="fieldRange" type="range" min="0.1" max="1" step="0.01" value="0.6"></div>
+          <div class="control-group"><label for="velocityRange"><span>سرعة الإطلاق v</span><output id="velocityValue">72 km/s</output></label><input id="velocityRange" type="range" min="30" max="110" step="1" value="72"></div>
+          <div class="control-group"><label for="chargeSelect"><span>شحنة الجسيم q</span><output id="chargeValue">موجبة +</output></label><div class="segmented"><button class="seg active" data-charge="1">+ موجبة</button><button class="seg" data-charge="-1">− سالبة</button></div></div>
+          <button class="launch-btn" id="launchBtn"><span class="launch-orb">◉</span> إطلاق الجسيم <span>⟵</span></button>
+          <div class="hint-card"><span class="hint-icon">i</span><p><b>قاعدة التجربة</b><br>كلما زادت <b>B</b>، انحنى المسار أكثر. اتجاه الانحناء يعتمد على إشارة الشحنة.</p></div>
+        </aside>
+      </section>
+
+      <section class="insight-section" id="insight">
+        <div class="section-intro"><span class="kicker">المبدأ / 03</span><h2>لماذا ينحني المسار؟</h2><p>ليست خدعة. إنها قوة لورنتز — القوة التي تغيّر اتجاه الجسيم دون أن تسرق طاقته.</p></div>
+        <div class="formula-card"><div class="formula">F = q · v × B</div><div class="formula-caption">قوة لورنتز</div></div>
+        <div class="concept-cards"><article><span class="card-index">01</span><h3>الشحنة</h3><p>تحدد إشارة q اتجاه الانحراف: موجب إلى الأعلى، وسالب إلى الأسفل.</p></article><article><span class="card-index">02</span><h3>المجال</h3><p>رفع B يصنع انحناءً أسرع، فيصغر نصف قطر المدار الدائري.</p></article><article><span class="card-index">03</span><h3>الطاقة</h3><p>المجال المغناطيسي يغيّر الاتجاه فقط؛ سرعة الجسيم تبقى تقريباً ثابتة.</p></article></div>
+      </section>
+
+      <section class="mission-banner"><div><span class="kicker">مهمتك التالية</span><h2>أصبحت جاهزاً للمستوى 02؟</h2><p>في التجربة القادمة ستتعامل مع جسيمين في آن واحد وتبحث عن نقطة التقاطع.</p></div><button class="outline-btn" id="resetBtn">إعادة ضبط التجربة ↻</button></section>
+    </main>
+    <footer><span>PARTICLE LAB / مختبر الجسيمات</span><span>صُممت للتعلم بالاستكشاف · 2026</span></footer>
+  </div>
+  <div class="modal hidden" id="howModal"><div class="modal-card"><button class="close" id="closeModal">×</button><span class="kicker">دليل سريع</span><h2>ثلاث خطوات للنجاح</h2><ol><li>اختر شدة المجال وسرعة الإطلاق.</li><li>راقب كيف يتغير نصف قطر المدار.</li><li>أصِب الحلقة الذهبية لتحصل على العلامة الكاملة.</li></ol><p class="modal-note">تلميح: جرّب شحنة سالبة لترى المسار ينعكس.</p></div></div>
+  <script src="script.js"></script>
+</body>
+</html>
