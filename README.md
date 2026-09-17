@@ -36,3 +36,8 @@ python3 -m http.server 8080
 رابط المستودع يعرض الملفات فقط. لتفعيل الرابط الحي من GitHub، افتح Settings ثم Pages، واختر Deploy from a branch، ثم اختر branch `master` والمجلد `/docs` واضغط Save. بعد دقيقة تقريباً سيكون الرابط:
 
 `https://mhmadamani57-boop.github.io/particle-lab-ar/`
+
+
+## النسخة الموحدة
+
+الملف `particle-lab.html` يجمع HTML وCSS وJavaScript والخلفية البصرية داخله بالكامل. يمكن تنزيله وفتحه مباشرة بالنقر المزدوج، ولا يحتاج إلى مجلدات أو ملفات إضافية أو اتصال بالإنترنت لتشغيل اللعبة.
